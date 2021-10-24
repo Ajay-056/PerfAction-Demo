@@ -6,9 +6,9 @@ name: CI
 on:
   # Triggers the workflow on push or pull request events but only for the main branch
   push:
-    branches: [ main ]
+    branches: [main]
   pull_request:
-    branches: [ main ]
+    branches: [main]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -24,7 +24,7 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-      
+
       - name: PerfAction for JMeter
         # You may pin to the exact commit or the version.
         # uses: QAInsights/PerfAction@2c22274f313e13ce9ddaf60c9f337a0e628fcb9d
@@ -32,11 +32,10 @@ jobs:
         with:
           # jmeter test plan to execute
           test-plan-path: './PerfAction-Demo.jmx'
-          args: "-o ./HTML_Result"
-          
+          args: '-e -o ./HTML_Result'
+
       - name: Upload Results
         uses: actions/upload-artifact@v2
         with:
           name: jmeter-results
           path: result.jtl
-    
