@@ -38,4 +38,4 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: jmeter-results
-          path: result.jtl
+          path: ak56.jtl
