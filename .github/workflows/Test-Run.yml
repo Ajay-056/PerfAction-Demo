@@ -32,7 +32,7 @@ jobs:
         with:
           # jmeter test plan to execute
           test-plan-path: './PerfAction-Demo.jmx'
-          args: '-e -o HTML_Report'
+          args: ''
 
       - name: Upload Results
         uses: actions/upload-artifact@v2
